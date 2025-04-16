@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-import React from "react";
+ 
 import Nav from "../Navbar/Nav";
 import Video from "./Video";
 import Overlay from "./Overlay";

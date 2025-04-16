@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-import React from "react";
+ 
 
 const Button = ({ text }) => (
   <a css={styles} href="#/" className="btn">
