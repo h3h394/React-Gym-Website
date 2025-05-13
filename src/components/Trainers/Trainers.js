@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-import React from "react";
+ 
 import Icon from "../GlobalComponents/Icon";
 import TrainerCard from "./TrainerCard";
 import Container from "../GlobalComponents/Container";

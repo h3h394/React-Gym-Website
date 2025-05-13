@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-import React from "react";
+ 
 
 const Socials = () => (
   <div css={styles} className="socials">
