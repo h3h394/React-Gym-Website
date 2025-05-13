@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-import React, { useState } from "react";
+import   { useState } from "react";
 import Icon from "../GlobalComponents/Icon";
 import LinksContainer from "./LinksContainer";
 import Results from "./Results";

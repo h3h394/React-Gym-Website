@@ -1,63 +1,126 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-import React from "react";
+import { useState } from "react";
+
 import Icon from "../GlobalComponents/Icon";
 import GymTitle from "./GymTitle";
 import GymSubtitle from "./GymSubtitle";
 import GymProgramCard from "./GymProgramCard";
 import Container from "../GlobalComponents/Container";
 
-const GymProgram = () => (
-  <div css={styles} className="gymProgram">
-    <GymTitle />
-    <Icon />
-    <GymSubtitle />
-    <Container>
-      <GymProgramCard
-        title="Basic Fitness"
-        desc="Please do not re-distribute this template ZIP file on any template collection website. This is not allowed."
-      />
-      <GymProgramCard
-        title="Advanced Muscle Course"
-        desc="You may want to browse through Digital Marketing or Corporate HTML CSS templates on our website."
-      />
-      <GymProgramCard
-        title="New Gym Training"
-        desc="If you wish to support TemplateMo website via PayPal, please feel free to contact us. We appreciate it a lot."
-      />
-      <GymProgramCard
-        title="Yoga Training"
-        desc="This template is built on Bootstrap v4.3.1 framework. It is easy to adapt the columns and sections."
-      />
-      <GymProgramCard
-        title="Basic Muscle Course"
-        desc="Credit goes to Pexels website for images and video background used in this HTML template."
-      />
-      <GymProgramCard
-        title="Body Building Course"
-        desc="Suspendisse fringilla et nisi et mattis. Curabitur sed finibus nisi. Integer nibh sapien, vehicula et auctor."
-      />
-    </Container>
-  </div>
-);
+const GymProgram = () => {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const programs = [
+    {
+      title: "Basic Fitness",
+      desc: "General fitness training suitable for beginners.",
+      category: "Fitness",
+    },
+    {
+      title: "Advanced Muscle Course",
+      desc: "Intensive muscle growth program.",
+      category: "Muscle",
+    },
+    {
+      title: "New Gym Training",
+      desc: "Latest training techniques and routines.",
+      category: "General",
+    },
+    {
+      title: "Yoga Training",
+      desc: "Relaxing and strength-building yoga sessions.",
+      category: "Yoga",
+    },
+    {
+      title: "Basic Muscle Course",
+      desc: "Introductory course for muscle development.",
+      category: "Muscle",
+    },
+    {
+      title: "Body Building Course",
+      desc: "Body transformation and competition prep.",
+      category: "Muscle",
+    },
+  ];
+
+  const filteredPrograms = selectedCategory === "All"
+    ? programs
+    : programs.filter(p => p.category === selectedCategory);
+
+  return (
+    <div css={styles} className="gymProgram">
+      <GymTitle />
+      <Icon />
+      <GymSubtitle />
+
+      <div className="filterBar">
+        {["All", "Fitness", "Muscle", "Yoga", "General"].map((cat) => (
+          <button
+            key={cat}
+            className={selectedCategory === cat ? "active" : ""}
+            onClick={() => setSelectedCategory(cat)}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+
+      <Container>
+        {filteredPrograms.map((program, index) => (
+          <GymProgramCard
+            key={index}
+            title={program.title}
+            desc={program.desc}
+          />
+        ))}
+      </Container>
+    </div>
+  );
+};
 
 const styles = css`
   width: 100%;
   min-height: 100vh;
   text-align: center;
   padding: 120px 0;
+
+  .filterBar {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  .filterBar button {
+    background: #222;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  .filterBar button.active,
+  .filterBar button:hover {
+    background: #f13a11;
+    color: white;
+  }
+
   .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 40px 0;
   }
+
   @media (max-width: 700px) {
     .container {
       flex-direction: column;
       justify-content: flex-start;
     }
   }
+
   @media (min-width: 701px) and (max-width: 1100px) {
     .container {
       flex-direction: column;

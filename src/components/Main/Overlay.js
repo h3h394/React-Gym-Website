@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-import React from "react";
+ 
 
 const Overlay = () => <div css={styles} className="overlay"></div>;
 

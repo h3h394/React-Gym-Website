@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-import React, { useState } from "react";
+import { useState } from "react";  // ✅ Import useState
+
 import Icon from "../GlobalComponents/Icon";
 import scheduleBg from "../Image/scheduleBg.jpg";
 import ScheduleLinks from "./ScheduleLinks";
@@ -22,10 +23,21 @@ const Schedule = () => {
         <br />
         ipsum dolor, ultricies fermentum massa consequat eu.
       </p>
-      <Container>
-        <ScheduleLinks setDay={setDay} day={day} />
-        <Table day={day} />
-      </Container>
+
+      {/*  Toggle Button (code contriubtion ) */}
+      <button 
+        css={buttonStyles} 
+        onClick={() => setHidden(!hidden)}
+      >
+        {hidden ? "Show Schedule" : "Hide Schedule"}
+      </button>
+
+      {!hidden && (
+        <Container>
+          <ScheduleLinks setDay={setDay} day={day} />
+          <Table day={day} />
+        </Container>
+      )}
     </section>
   );
 };
@@ -67,6 +79,24 @@ const styles = css`
     .container{
       max-width: 92%;
     }
+  }
+`;
+
+/*  Styles for the Toggle Button */
+const buttonStyles = css`
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background: #ed563b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background: #ff765b;
   }
 `;
 

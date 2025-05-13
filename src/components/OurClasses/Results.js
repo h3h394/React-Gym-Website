@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-import React from "react";
+ 
 import Output from "./Output";
 import ClassOneBg from "../Image/classOne.jpg";
 import ClassTwoBg from "../Image/classTwo.jpg";
