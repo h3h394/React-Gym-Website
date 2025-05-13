@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-import React from "react";
+ 
 import Container from "../GlobalComponents/Container";
 import Map from "./Map";
 import Form from "./Form";
@@ -14,9 +14,10 @@ const Contact = () => (
     <footer>
       <p>
         Copyright &copy; © 2020 Training Studio - Designed by{" "}
-        <a href="https://templatemo.com/" target="_blank">
-          TemplateMo
-        </a>
+        <a href="https://example.com" target="_blank" rel="noopener noreferrer">
+  Visit our website
+</a>
+
       </p>
     </footer>
   </section>
