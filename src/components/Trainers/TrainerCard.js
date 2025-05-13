@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-import React from "react";
+ 
 import Socials from "./Socials";
 
 const TrainerCard = ({ title, name, desc, img }) => (

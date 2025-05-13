@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-import React from "react";
+ 
 
 const Link = ({ name, linkTo }) => (
   <a css={styles} href={linkTo}>

@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-import React from "react";
+ 
 import VideoBg from "../Image/bgVideo.mp4";
 
 const Video = () => (
