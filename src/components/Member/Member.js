@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-import React from "react";
+ 
 import Button from "../GlobalComponents/Button";
 import GymOverlayBg from "../Image/gymOverlayBg.jpg";
 
